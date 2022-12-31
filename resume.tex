@@ -1,0 +1,230 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Hok Hei Wong, Anthony} \\[7.5pt]
+\href{https://github.com/anth0nywong}{\raisebox{-0.05\height}\faGithub\ anth0nywong} \ $|$ \ 
+\href{https://www.linkedin.com/in/hok-hei-wong-8b620a1b9/}{\raisebox{-0.05\height}\faLinkedin\ Hok Hei Wong} \ $|$ \ 
+\href{https://intro.anthonyhhwong.link/}{\raisebox{-0.05\height}\faGlobe \ intro.anthonyhhwong.link} \\
+\href{mailto:anthonywong.hokhei@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ anthonywong.hokhei@gmail.com} \ $|$ \ 
+\href{tel:+16473337558}{\raisebox{-0.05\height}\faMobile \ (647)333-7558} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Proficient & \normalsize{  ES6, TypeScript, Git, HTML, CSS, JavaScript, Bootstrap, Node, Express, React, C\#, .NET, SQL, MongoDB, Figma, Scrum, Agile}\\[20pt]
+Familiar  &  \normalsize{AWS, Docker, Java, Python, TensorFlow Lite, Cloudflare, ML.NET, DNS, Selenium, Mocha, Unity, Blender}\\  
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l c@{}l r@{} }
+\textbf{Student Researcher} & \textbf{WIMTACH - Toronto, ON} &  \hfill Oct 2022 - Present \\[3.75pt]
+\multicolumn{3}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+As a member of an Agile Scrum team, designed and developed a cloud-based web and mobile application as a staffing management solution.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Developed web front-end using ReactJS
+        \item Designed the web and mobile user interface with Figma to improve user experience and facilitate front-end development.
+\end{itemize}
+\end{minipage}
+}  \\
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Full Stack Project - Aloha Rental} & \hfill \href{https://aloha_fe.anthonyhhwong.link/}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{A full stack application for private vehicle rental developed with MERN stack to provide renter options of cheaper car rental.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Machine Learning Project - Stop Sign Object Detection} & \hfill \href{https://github.com/anth0nywong/Stop-Sign-Object-Detection-Android-App-with-TensorFlow-Lite}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{As many drivers do not own an autopilot car, we developed a stop-sign detection android application with TensorFlow Lite Model to facilitate their driving experience.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Selenium Automated Test Scripts for User Registration and Login} & \hfill \href{https://youtu.be/pqS5UqeieZs}{Demo Video} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+To achieve automated testing, we adopted Selenium with Mocha Framework to test the signing up and logging in process of a web application.
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Restful API - Comp214 Airlines} & \hfill \href{https://www.anthonyhhwong.link/}{Link to Demo} $|$ \href{https://youtu.be/lvY62TFsO2A} {Demo Video} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+A Restful API designed with Express and OracleDB to handle highly relational data of airline tickets anticipated with numerous data manipulation. EJS template was adopted for server-side rendering to provide a demo application of this API. 
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Restful API - Survey Horse} & \hfill  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+A Restful API designed with Express and MongoDB for a survey site with multiple data visualizations using ChartJS and ChartJS Wordcloud libraries. EJS template was adopted for server-side rendering to provide a demo application of this API. 
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Individual Project - Socket.IO Chat App} & \hfill \href{https://socket.anthonyhhwong.link/}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{To achieve a real-time chat application, a Web Socket must be created to provide two-way communication between clients and servers. This chat application project adopted the Socket.IO library to provide the needed bidirectional channel.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Individual Project - Web Scraping with Python} & \hfill \href{https://github.com/anth0nywong/podcast_scraping}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Since I wanted to make a list of podcasts of a channel that are updated on a daily basis on separate web pages, an application using Python with Beautiful Soup library is developed to scrape the podcasts into a single page.}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATIONs
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2021 - 2023 \
+\begin{minipage}[t]{0.875\linewidth}
+Post-Secondary Diploma in Software Engineering Technician \hfill\normalsize (GPA: 4.36/4.5) \\
+\textbf{Centennial College} 
+\end{minipage} \\[20pt]
+2022 - 2023 \
+\begin{minipage}[t]{0.875\linewidth}
+BEng (HONS) in Civil Engineering \hfill\normalsize (GPA: 3.07/4.0) \\
+\textbf{The Hong Kong Polytechnic University} 
+\end{minipage} \\
+%2014 - 2018 & BEng (HONS) in Civil Engineering at \textbf{The Hong Kong Polytechnic University} \hfill (GPA: 4.0/4.0) \\ 
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+%	Activities
+%----------------------------------------------------------------------------------------
+\section{Activities}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+{FundEvolve Hackathon at WIMTACH - Winner} & \hfill {Fall 2022} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{} 
+\end{tabularx}
+
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
