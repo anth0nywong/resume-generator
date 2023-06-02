@@ -55,6 +55,7 @@
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
+\usepackage{fontawesome5}
 
 %tabularx environment
 \usepackage{tabularx}
@@ -68,6 +69,7 @@
 %to prevent spillover of tabular into next pages
 \usepackage{supertabular}
 \usepackage{tabularx}
+\usepackage{tabto}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
 
@@ -76,10 +78,58 @@
 \usepackage{multicol}
 \usepackage{multirow}
 
+%----------------------------------------------------------------------------------------
+%	Customs Skills Bar
+%----------------------------------------------------------------------------------------
+
+%%% boxAwesome Macro %%%
+
+\newcommand{\boxAwesome}[1]{
+   \makebox[1.50em][c]{
+      #1
+   }
+}
+
+%%% Skills Macro %%%
+
+
+\newcommand{\doubleSkill}[3]{
+    \noindent\hangindent=1.5em\hangafter=0
+    \parbox{30\spacebox} {
+        \boxAwesome{#1} \textbf{#2}
+        \negxvspace
+    } \negxvspace \mhspace \texttt{#3} \par
+}
+
+
+% Horizontal %
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{123456789} % set \spacebox length to be equal to the width of the box formed by `123456789`
+
+\newcommand{\xhspace}{\hspace*{0.1em}}
+\newcommand{\shspace}{\hspace*{0.5em}}
+\newcommand{\mhspace}{\hspace*{2.2em}}
+
+\newcommand{\negxhspace}{\hspace*{-0.2em}}
+\newcommand{\negshspace}{\hspace*{-0.5em}}
+\newcommand{\negmhspace}{\hspace*{-1em}}
+\newcommand{\neghhspace}{\hspace*{-1.5em}}
+
+% Vertical %
+
+\newcommand{\negxvspace}{\vspace*{-0.1em}}
+\newcommand{\negsvspace}{\vspace*{-0.5em}}
+\newcommand{\negmvspace}{\vspace*{-1em}}
+\newcommand{\neghvspace}{\vspace*{-1.5em}}
+
+\newcommand{\svspace}{\vspace*{0.5em}}
+\newcommand{\mvspace}{\vspace*{1em}}
+
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\section}{0pt}{5pt}{5pt}
 
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
@@ -103,6 +153,7 @@
 \begin{document}
 
 % non-numbered pages
+
 \pagestyle{empty} 
 
 %----------------------------------------------------------------------------------------
@@ -116,9 +167,9 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Hok Hei Wong} \\[7.5pt]
+\Huge{Anthony Wong} \\[7.5pt]
 \href{https://github.com/anth0nywong}{\raisebox{-0.05\height}\faGithub\ anth0nywong} \ $|$ \ 
-\href{https://www.linkedin.com/in/hok-hei-wong-8b620a1b9/}{\raisebox{-0.05\height}\faLinkedin\ Hok Hei Wong} \ $|$ \ 
+\href{https://www.linkedin.com/in/hok-hei-wong-8b620a1b9/}{\raisebox{-0.05\height}\faLinkedin\ Anthony Wong} \ $|$ \ 
 \href{https://intro.anthonyhhwong.link/}{\raisebox{-0.05\height}\faGlobe \ intro.anthonyhhwong.link} \\
 \href{mailto:anthonywong.hokhei@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ anthonywong.hokhei@gmail.com} \ $|$ \ 
 \href{tel:+16473337558}{\raisebox{-0.05\height}\faMobile \ (647)333-7558} \\
@@ -128,135 +179,31 @@
 %----------------------------------------------------------------------------------------
 %	Career Objective
 %----------------------------------------------------------------------------------------
-\section{Career Objective}
+\section{Summary}
 \begin{minipage}[t]{\linewidth}
-Recently graduated from a software development program and is currently pursuing a career in software development of enterprise business systems and cloud-based applications in Canada.
+Results-oriented graduate with hands-on internship experience in JavaScript technologies. Seeking a web development career focused on enterprise business systems and cloud-based applications.\\
+Hold a Post Graduation Work Permit.
 \end{minipage}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Proficient & \normalsize{  ES6, TypeScript, Git, HTML, CSS, JavaScript, Bootstrap, Node, Express, React, C\#, .NET, SQL, MongoDB, Figma, Scrum, Agile}\\[20pt]
-Familiar  &  \normalsize{AWS, Docker, Java, Python, TensorFlow Lite, Cloudflare, ML.NET, DNS, Selenium, Mocha, Unity, Blender}\\  
-\end{tabularx}
+%\begin{tabularx}{\linewidth}{@{}l X@{}}
+%Proficient & \normalsize{  ES6, ReactJS, Redux, NextJS, TypeScript, HTML, CSS, Tailwind CSS, Bootstrap, NodeJS, RESTful, C\#, .NET, SQL, MongoDB, Scrum, Agile, Postman, Github}\\[20pt]
+%Familiar  &  \normalsize{ AWS, Docker Compose, Docker Swarm, Java, Python, TensorFlow Lite, Cloudflare,  DNS, ML.NET, ASP.NET, Unit Testing, Selenium, Mocha, Figma, Unity, Blender}\\  
+%\end{tabularx}
+    
+	\doubleSkill{\faPaintBrush}{Front-end}{Next \textbullet{} React \textbullet{} Redux \textbullet{} Bootstrap \textbullet{} Tailwind CSS  \textbullet{} Sass}
+	\doubleSkill{\faCogs}{Back-end}{NodeJS \textbullet{} ExpressJS  \textbullet{} .NET  \textbullet{} RESTful}
+	\doubleSkill{\faDatabase}{Databases}{OracleSQL \textbullet{} MongoDB}
+	\doubleSkill{\faTools}{Testing and Development Tools}{Git \textbullet{} Postman \textbullet{} Selenium \textbullet{} Mocha \textbullet{} Jest}
+	\doubleSkill{\faDocker}{CI/CD}{Docker Swarm \textbullet{}  Kubernetes \textbullet{} AWS ECS}
+	\doubleSkill{\faAws}{AWS}{EC2 \textbullet{} S3 \textbullet{} Lambda}
+	\doubleSkill{\faServer}{DNS}{Cloudflare \textbullet{} AWS Route 53}
+	\doubleSkill{\faRobot}{Machine Learning}{TensorFlow Lite \textbullet{} ML.NET}
+	\doubleSkill{\faFigma}{UX/UI Design}{Figma}
 
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
-
-%Experience
-\section{Work Experience}
-
-\begin{tabularx}{\linewidth}{ @{}l c@{}l r@{} }
-\textbf{Student Researcher} & \textbf{WIMTACH - Toronto, ON} &  \hfill Oct 2022 - Present \\[3.75pt]
-\multicolumn{3}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-As a member of an Agile Scrum team, designed and developed a cloud-based web and mobile application as a staffing management solution.
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Developed web front-end using ReactJS for user authentication, implemented the Restful API for job posts and applicants to the front end, 
-        created an interactive calendar managing job posts, and implemented google map API for getting users available work radius.
-        \item Designed the web and mobile user interface with Figma to improve user experience and facilitate front-end development.
-    \end{itemize}
-\end{minipage}
-}  \\
-\end{tabularx}
-
-%Projects
-\section{Projects}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Full Stack Project - Aloha Rental} & \hfill \href{https://aloha_fe.anthonyhhwong.link/}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-A full stack application for private vehicle rental developed with MERN stack and TypeScript to provide renter options for cheaper car rental.
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Designed software design models and documentation.
-        \item Hosted the back-end and front-end server on AWS cloud instances.
-        \item Created NoSQL database on MongoDB Atlas.
-        \item Developed the back-end Restful APIs for car rentals, notifications functions, and image uploading functions with AWS S3.
-        \item Developed part of the web front-end with ReactJS to implement the back-end APIs, including the available vehicle list, the create post page, and the notification component.
-    \end{itemize}
-\end{minipage}} \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Machine Learning Project - Stop Sign Object Detection} & \hfill \href{https://github.com/anth0nywong/Stop-Sign-Object-Detection-Android-App-with-TensorFlow-Lite}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-As many drivers do not own an autopilot car, we developed a stop-sign detection android application with TensorFlow Lite Model to facilitate their driving experience.
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Annotated 150 images with LabelImg and prepared data for model training.
-        \item Trained object detection model on Google Colab with TensorFlow Lite model maker library.
-        \item Modified TensorFlow object detection example into an Android camera application for stop-sign object detection.
-    \end{itemize}
-\end{minipage}} \\
-
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Selenium Automated Test Scripts for User Registration and Login} & \hfill \href{https://youtu.be/pqS5UqeieZs}{Demo Video} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-To achieve automated testing, we adopted Selenium with Mocha Framework to test the signing up and logging in process of a web application.
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Prepared user authentication functions on a web application ready for unit tests.
-        \item Programmed Selenium scripts for each unit test, such as user sign-up, user login, and invalid login.
-        \item Recorded a demo video to demonstrate the automated testing.
-    \end{itemize}
-\end{minipage}} \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Restful API - COMP214 Airlines} & \hfill \href{https://www.anthonyhhwong.link/}{Link to Demo} $|$ \href{https://youtu.be/lvY62TFsO2A} {Demo Video} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{ 
-\begin{minipage}[t]{\linewidth}
-A Restful API designed with Express and OracleDB to handle highly relational data of airline tickets anticipated with numerous data manipulation. EJS template was adopted for server-side rendering to provide a demo application of this API.
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Designed ERD and created SQL database with OracleDB and hosted the database on Oracle Cloud.
-        \item Researched and established connections between Express JS back-end and OracleDB database.
-        \item Programmed the airline ticket website interface with HTML, CSS, and JavaScript.
-    \end{itemize}
-\end{minipage}} \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Restful API - Survey Horse} & \hfill  \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{ 
-\begin{minipage}[t]{\linewidth}
-A Restful API designed with Express and MongoDB for a survey site with multiple data visualizations using ChartJS and ChartJS Wordcloud libraries. EJS template was adopted for server-side rendering to provide a demo application of this API.
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Developed the back-end Restful API for surveys and user authentication.
-        \item Created NoSQL database on MongoDB Atlas.
-    \end{itemize}
-\end{minipage}} \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Individual Project - Socket.IO Chat App} & \hfill \href{https://socket.anthonyhhwong.link/}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-To achieve a real-time chat application, a web socket must be created to provide two-way communication between clients and servers. This chat application project adopted the Socket.IO library to provide the needed bidirectional channel.
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Developed the back-end and front-end servers and established web sockets between them using Socket.IO.
-        \item Created several chatrooms connected with different web sockets.
-        \item Hosted the application on AWS instance.
-    \end{itemize}
-\end{minipage}} \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Individual Project - Web Scraping with Python} & \hfill \href{https://github.com/anth0nywong/podcast_scraping}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-Since I wanted to make a list of podcasts of a channel that is updated on a daily basis on separate web pages, a script using Python with Beautiful Soup library is developed to scrape the podcasts into a single page.
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Created Python script to scrape podcast links and information with the Beautiful Soup library and exported the data to JSON files.
-        \item Created the back-end server with ExpressJS to run the Python script automatically every day to update the scraped information.
-    \end{itemize}
-\end{minipage}} \\
-\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATIONs
@@ -270,10 +217,132 @@ Since I wanted to make a list of podcasts of a channel that is updated on a dail
     \end{minipage} \\[20pt]
     2014 - 2018 \
         \begin{minipage}[t]{0.875\linewidth}
-        BEng (HONS) in Civil Engineering \hfill\normalsize (GPA: 3.07/4.0) \\
+        BEng (HONS) in Civil Engineering \\
         \textbf{The Hong Kong Polytechnic University} 
         \end{minipage} \\
 \end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l c@{}l r@{} }
+\textbf{Student Researcher} & \textbf{WIMTACH - Toronto, ON} &  \hfill 2022 - 2023\\[3.75pt]
+\multicolumn{3}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+As a member of an Agile Scrum team, designed and developed a cloud-based web and mobile application as a staffing management solution. \\[3.75pt]
+React/Figma/NodeJS/MongoDB/AWS
+    \begin{itemize}[topsep=3pt,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Developed web front-end using ReactJS for user authentication, implemented the Restful API for job posts and applicants to the front end, 
+        created an interactive calendar managing job posts, and implemented google map API for getting user available radius.
+        \item Designed the web and mobile user interface with Figma to improve user experience and facilitate front-end development.
+    \end{itemize}
+\end{minipage}} 
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Full Stack Project - Aloha Rental}   & \hfill \href{https://aloha_fe.anthonyhhwong.link/}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+MERN stack/TypeScript/Heroku/AWS EC2/Docker
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Collaborated with a team of 8 members to design and implement a car rental system from scratch within 2 months.
+        \item Played a key role in both frontend and backend development, focusing on implementation of user interface elements, external libraries such as AWS sdk, and user authorization and athentication.
+	 \item Migrated the app from Heroku to AWS Cloud Instance and deployed it with Docker Swarm to ease the cost of hosting, enable resource utilization and ensure high avaliablility and scalability.
+    \end{itemize}
+\end{minipage}} 
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Machine Learning Project - Stop Sign Object Detection} & \hfill \href{https://github.com/anth0nywong/Stop-Sign-Object-Detection-Android-App-with-TensorFlow-Lite}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+Python/Colab/TensorFlow Lite/Android Studio/Object Detection/LabelImg
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Downloaded and annotated over 150 images with Open Image and LabelImg for model training.
+        \item Trained an accurate and efficient object detection model with 70 percent AP score using TensorFlow Lite model maker library.
+    \end{itemize}
+\end{minipage}} 
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Selenium Automated Test Scripts for User Registration and Login} & \hfill \href{https://youtu.be/3CLb8b-uIlw}{Demo Video} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+MERN Stack/Selenium/Mocha
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Programmed efficient automated test scripts which simulate user interactions, validate functionality, and ensure application reliability in a few seconds.
+    \end{itemize}
+\end{minipage}} 
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Restful API - COMP214 Airlines} & \hfill \href{https://www.anthonyhhwong.link/}{Link to Demo} $|$ \href{https://youtu.be/lvY62TFsO2A} {Demo Video} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{ 
+\begin{minipage}[t]{\linewidth}
+ExpressJS/OracleDB/PL SQL/Oracle Cloud Autonomous Database/EJS/Docker
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Collaborated with a team of 4 members to design the ERD and created SQL database with OracleDB.
+        \item Researched and established connections between Express JS back-end and OracleDB database, including installation of Oracle Client on different os.
+    \end{itemize}
+\end{minipage}} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Restful API - Survey Horse} & \hfill  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{ 
+\begin{minipage}[t]{\linewidth}
+ExpressJS/MongoDB/ChartJS/EJS
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item In a team of 4 members, developed the database, back-end Restful API for surveys, and user authorization and authentication.
+    \end{itemize}
+\end{minipage}} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Individual Project - Socket.IO Chat App} & \hfill \href{https://socket.anthonyhhwong.link/}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+MERN Stack/Socket.IO/TypeScript/AWS EC2/ Docker
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Enabled real-time bi-directional communication between server and client using Socket.io library.
+    \end{itemize}
+\end{minipage}} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Individual Project - Web Scraping with Python} & \hfill \href{https://github.com/anth0nywong/podcast_scraping}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+Python/Beautiful Soup/ExpressJS/Docker
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Executed Python script on NodeJS scraping podcast information to JSON files with BS5 library.
+    \end{itemize}
+\end{minipage}} \\
+\end{tabularx}
+
+\section{Other Experience}
+\begin{tabularx}{\linewidth}{ @{}l c@{}l r@{} }
+\textbf{Assistant Civil Engineer} \\ [3.75pt]
+WSP (Aisa) Limited &  \hfill 2018 - 2021 \\ [-10pt]
+\multicolumn{2}{@{}X@{}}{
+%\begin{minipage}[t]{\linewidth}
+%\tabto{3em}\textbf  {Key Achievements:} 
+    %\begin{itemize}[topsep=3pt, after=\strut, leftmargin=3em, itemsep=3pt]
+        %\item Managed the land alienation, temporary land allocation, and road work permit issues to ensure a successful start of a site formation project. 
+       % \item Assessed changes in the project scope and schedule due to unexpected issues and defended the contractors' cost claims of more than 2 years of work delay.
+    %\end{itemize}
+%\end{minipage}
+} % \\
+\end{tabularx}
+
+
 %----------------------------------------------------------------------------------------
 %	Activities
 %----------------------------------------------------------------------------------------
@@ -282,8 +351,12 @@ Since I wanted to make a list of podcasts of a channel that is updated on a dail
 Fall 2022 \
     \begin{minipage}[t]{0.875\linewidth}
     FundEvolve Hackathon at WIMTACH - Winner of website UX competition \hfill\href{https://anth0nywong.github.io/resume/activities/1.0_certificate.pdf}{Link}
-    \end{minipage} \\[20pt]
+ 	\end{minipage}\\
 \end{tabularx}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Participated in a Finance Web App design hackathon with around 20 participants organized in 5 groups.
+        \item Collaborated effectively with a team of 3 members, contributing to the ideation, wireframing, prototyping, and UI/UX design.
+	\end{itemize}
 
 
 \vfill
