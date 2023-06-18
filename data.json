@@ -1,0 +1,222 @@
+{
+  "title": {
+    "eachRowLinks": "3",
+    "name": "Anthony Wong",
+    "links": [
+      {
+        "link": "https://github.com/anth0nywong",
+        "icon": "faGithub",
+        "text": "anth0nywong"
+      },
+      {
+        "link": "https://www.linkedin.com/in/anth0nywong/",
+        "icon": "faLinkedin",
+        "text": "Anthony Wong"
+      },
+      {
+        "link": "https://intro.anthonyhhwong.link/",
+        "icon": "faGlobe",
+        "text": "intro.anthonyhhwong.link"
+      },
+      {
+        "link": "mailto:anthonywong.hokhei@gmail.com",
+        "icon": "faEnvelope",
+        "text": "anthonywong.hokhei@gmail.com"
+      },
+      {
+        "link": "tel:+16473337558",
+        "icon": "faMobile",
+        "text": "(647)333-7558"
+      }
+    ]
+  },
+  "summary": {
+    "title": "Summary",
+    "content": "Results-oriented graduate with hands-on internship experience in JavaScript technologies. Seeking a web development career focused on enterprise business systems and cloud-based applications."
+  },
+  "awards": [
+    {
+      "date": "Fall 2022",
+      "event": "FundEvolve Hackathon at WIMTACH",
+      "award": "Winner of website UX competition",
+      "link": "https://anth0nywong.github.io/resume/activities/1.0_certificate.pdf",
+      "descriptions": [
+        "Participated in a Finance Web App design hackathon with around 20 participants organized in 5 groups.",
+        "Collaborated effectively with a team of 3 members, contributing to the ideation, wireframing, prototyping, and UI/UX design."
+      ]
+    }
+  ],
+  "educations": [
+    {
+      "from": "2021",
+      "to": "2023",
+      "gpa": "4.36",
+      "gpaMax": "4.5",
+      "college": "Centennial College",
+      "margin": "20pt",
+      "degree": "Post-Secondary Diploma in Software Engineering Technician"
+    },
+    {
+      "from": "2014",
+      "to": "2018",
+      "college": "The Hong Kong Polytechnic University",
+      "degree": "BEng (HONS) in Civil Engineering"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Student Researcher",
+      "company": "WIMTACH",
+      "location": "Toronto, ON",
+      "from": "2022",
+      "to": "2023",
+      "generalDescription": "As a member of an Agile Scrum team, designed and developed a cloud-based web and mobile application as a staffing management solution.",
+      "tech": "React/Figma/NodeJS/MongoDB/AWS",
+      "descriptions": [
+        "Developed web front-end using ReactJS for user authentication, implemented the Restful API for job posts and applicants to the front end, created an interactive calendar managing job posts, and implemented google map API for getting user available radius.",
+        "Designed the web and mobile user interface with Figma to improve user experience and facilitate front-end development."
+      ]
+    }
+  ],
+  "otherExperience": [
+    {
+      "title": "Assistant Civil Engineer",
+      "company": "WSP (Aisa) Limited",
+      "location": "Toronto, ON",
+      "from": "2018",
+      "to": "2021"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Full Stack Project - Aloha Rental",
+      "link": {
+        "link": "https://aloha_fe.anthonyhhwong.link/",
+        "name": "Link to Demo"
+      },
+      "tech": "MERN stack/TypeScript/Heroku/AWS EC2/Docker",
+      "descriptions": [
+        "Collaborated with a team of 8 members to design and implement a car rental system from scratch within 2 months.",
+        "Played a key role in both frontend and backend development, focusing on implementation of user interface elements, external libraries such as AWS sdk, and user authorization and athentication.",
+        "Migrated the app from Heroku to AWS Cloud Instance and deployed it with Docker Swarm to ease the cost of hosting, enable resource utilization and ensure high avaliablility and scalability."
+      ]
+    },
+    {
+      "title": "Machine Learning Project - Stop Sign Object Detection",
+      "link": {
+        "link": "https://github.com/anth0nywong/Stop-Sign-Object-Detection-Android-App-with-TensorFlow-Lite",
+        "name": "Link to Demo"
+      },
+      "tech": "Python/Colab/TensorFlow Lite/Android Studio/Object Detection/LabelImg",
+      "descriptions": [
+        "Downloaded and annotated over 150 images with Open Image and LabelImg for model training.",
+        "Trained an accurate and efficient object detection model with 70 percent AP score using TensorFlow Lite model maker library."
+      ]
+    },
+    {
+      "title": "Selenium Automated Test Scripts for User Registration and Login",
+      "link": {
+        "link": "https://youtu.be/3CLb8b-uIlw",
+        "name": "Demo Video"
+      },
+      "tech": "MERN Stack/Selenium/Mocha",
+      "descriptions": [
+        "Programmed efficient automated test scripts which simulate user interactions, validate functionality, and ensure application reliability in a few seconds."
+      ]
+    },
+    {
+      "title": "Restful API - COMP214 Airlines",
+      "link": {
+        "link": "https://youtu.be/lvY62TFsO2A",
+        "name": "Demo Video"
+      },
+      "link2": {
+        "link": "https://www.anthonyhhwong.link/",
+        "name": "Link to Demo"
+      },
+      "tech": "ExpressJS/OracleDB/PL SQL/Oracle Cloud Autonomous Database/EJS/Docker",
+      "descriptions": [
+        "Collaborated with a team of 4 members to design the ERD and created SQL database with OracleDB.",
+        "Researched and established connections between Express JS back-end and OracleDB database, including installation of Oracle Client on different os."
+      ]
+    },
+    {
+      "title": "Restful API - Survey Horse",
+      "tech": "ExpressJS/MongoDB/ChartJS/EJS",
+      "descriptions": [
+        "In a team of 4 members, developed the database, back-end Restful API for surveys, and user authorization and authentication."
+      ]
+    },
+    {
+      "title": "Individual Project - Socket.IO Chat App",
+      "link": {
+        "link": "https://socket.anthonyhhwong.link/",
+        "name": "Link to Demo"
+      },
+      "tech": "MERN Stack/Socket.IO/TypeScript/AWS EC2/ Docker",
+      "descriptions": [
+        "Enabled real-time bi-directional communication between server and client using Socket.io library."
+      ]
+    },
+    {
+      "title": "Individual Project - Web Scraping with Python",
+      "link": {
+        "link": "https://github.com/anth0nywong/podcast_scraping",
+        "name": "ReadMe"
+      },
+      "link2": {
+        "link": "https://podcast.anthonyhhwong.link/",
+        "name": "Link to Demo"
+      },
+      "tech": "Python/Beautiful Soup/ExpressJS/Docker",
+      "descriptions": [
+        "Executed Python script on NodeJS scraping podcast information to JSON files with BS5 library."
+      ]
+    }
+  ],
+  "skills": {
+    "icon": true,
+    "data": [
+      {
+        "title": "Front-end",
+        "icon": "faPaintBrush",
+        "props": ["Next", "React", "Redux", "Bootstrap", "Tailwind CSS", "Sass"]
+      },
+      {
+        "title": "Back-end",
+        "icon": "faCogs",
+        "props": ["ExpressJS", ".NET", "RESTful"]
+      },
+      {
+        "title": "Database",
+        "icon": "faDatabase",
+        "props": ["OracleSQL", "MongoDB"]
+      },
+      {
+        "title": "Testing and Development Tools",
+        "icon": "faTools",
+        "props": ["Git", "Postman", "Selenium", "Mocha", "Jest"]
+      },
+      {
+        "title": "CI/CD",
+        "icon": "faDocker",
+        "props": ["Docker Swarm", "Kubernetes", "AWS ECS"]
+      },
+      {
+        "title": "AWS",
+        "icon": "faAws",
+        "props": ["EC2", "S3", "Lambda"]
+      },
+      {
+        "title": "DNS",
+        "icon": "faServer",
+        "props": ["Cloudflare", "AWS Route 53"]
+      },
+      {
+        "title": "UX/UI Design",
+        "icon": "faFigma",
+        "props": ["Figma"]
+      }
+    ]
+  }
+}

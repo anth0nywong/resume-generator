@@ -1,0 +1,40 @@
+{
+  "name": "latex-resume-generator",
+  "authors": "Anth0ny Wong",
+  "version": "1.0.0",
+  "description": "NodeJS application which generate resume in pdf format with a simple json data file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron-forge start --inspect-electron",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anth0nywong/resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anth0nywong/resume/issues"
+  },
+  "homepage": "https://github.com/anth0nywong/resume#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "electron-squirrel-startup": "^1.0.0",
+    "node-latex": "^3.1.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.2.1",
+    "@electron-forge/maker-deb": "^6.2.1",
+    "@electron-forge/maker-pkg": "^6.2.1",
+    "@electron-forge/maker-rpm": "^6.2.1",
+    "@electron-forge/maker-squirrel": "^6.2.1",
+    "@electron-forge/maker-wix": "^6.2.1",
+    "@electron-forge/maker-zip": "^6.2.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
+    "electron": "^25.1.1",
+    "electron-wix-msi": "^5.0.0"
+  }
+}

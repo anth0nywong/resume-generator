@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Resume Generator</title>
+  </head>
+  <body>
+    <h1>Resume Generator</h1>
+    <label for="selectFiles">1. Upload Your Json file:</label>
+    <input type="file" id="selectFiles" value="Import" /><br />
+    <label for="selectFiles"
+      >2. Import data from your Json file or manually paste your Json
+      data:</label
+    >
+    <button id="import">Import</button>
+    <textarea id="result" rows="20" cols="75"></textarea>
+    <br />
+    <label for="selectFiles">3. Submit your data to generate pdf:</label>
+    <button id="generate">Submit</button>
+
+    <script>
+      // Get data from the html
+      document.getElementById("import").onclick = function () {
+        let files = document.getElementById("selectFiles").files;
+        if (files.length <= 0) {
+          return false;
+        }
+
+        let fr = new FileReader();
+
+        fr.onload = function (e) {
+          console.log(e);
+          let result = JSON.parse(e.target.result);
+          let formatted = JSON.stringify(result, null, 2);
+          document.getElementById("result").value = formatted;
+        };
+
+        fr.readAsText(files.item(0));
+      };
+      // Submit Data to IPC to the main process of electrons
+      document.getElementById("generate").onclick = function () {
+        let result = JSON.parse(document.getElementById("result").value);
+        window.api.send("toMain", result);
+      };
+    </script>
+  </body>
+</html>
