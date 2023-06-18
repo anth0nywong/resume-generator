@@ -13,7 +13,8 @@ module.exports = (data) => {
     });
   })();
 
-  return `
+  if (data.otherExperience)
+    return `
 
 %----------------------------------------------------------------------------------------
 %	OTHER EXPERIENCE
@@ -22,4 +23,5 @@ module.exports = (data) => {
 \\section{Other Experience}
 ${dataString}
 `;
+  else return ``;
 };

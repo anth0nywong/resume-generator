@@ -18,10 +18,10 @@ module.exports = {
       await temp.write(text);
     });
 
-    await compiletPDF("temp.tex", "Anthony_Wong_CV.pdf", () => {
+    await compiletPDF("temp.tex", data.title.name + "_CV.pdf", () => {
       temp.close();
       callback();
     });
   },
-  savedPath: __dirname + "Anthony_Wong_CV.pdf",
+  savedPath: __dirname,
 };
