@@ -1,0 +1,120 @@
+{
+  "template": "template_1",
+  "title": {
+    "eachRowLinks": "3",
+    "name": "Your Name",
+    "links": [
+      {
+        "link": "https://github.com/",
+        "icon": "faGithub",
+        "text": "your github"
+      },
+      {
+        "link": "https://www.linkedin.com/",
+        "icon": "faLinkedin",
+        "text": "Your linkedin name"
+      },
+      {
+        "link": "mailto:anthonywong.hokhei@gmail.com",
+        "icon": "faEnvelope",
+        "text": "Your Email"
+      },
+      {
+        "link": "tel:+11234567890",
+        "icon": "faMobile",
+        "text": "(123)4567890"
+      }
+    ]
+  },
+  "summary": {
+    "title": "Summary",
+    "content": "You can write anything about you here."
+  },
+  "educations": [
+    {
+      "from": "2000",
+      "to": "2004",
+      "gpa": "4.5",
+      "gpaMax": "4.5",
+      "college": "Any College",
+      "margin": "20pt",
+      "degree": "Degree in Computer Science"
+    },
+    {
+      "from": "2004",
+      "to": "2008",
+      "college": "Any University",
+      "degree": "Master in Computer Science"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Developer",
+      "company": "Wellcome",
+      "location": "Toronto, ON",
+      "from": "2008",
+      "to": "2014",
+      "generalDescription": "Description of Your Job",
+      "tech": "NodeJS/Electron",
+      "descriptions": [
+        "Develope an app which...",
+        "Collaborate with the team to..."
+      ]
+    }
+  ],
+  "otherExperience": [
+    {
+      "title": "Civil Engineer",
+      "company": "King Construction Limited",
+      "location": "Toronto, ON",
+      "from": "2014",
+      "to": "2021"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Full Stack Project - Wellcome",
+      "link": {
+        "link": "https://github.com/anth0nywong/resume-generator",
+        "name": "Link to Demo"
+      },
+      "tech": "NodeJS/Electron",
+      "descriptions": ["Project description 1", "Project description 2"]
+    }
+  ],
+  "skills": {
+    "icon": true,
+    "data": [
+      {
+        "title": "Front-end",
+        "icon": "faPaintBrush",
+        "props": ["Next", "React"]
+      },
+      {
+        "title": "Back-end",
+        "icon": "faCogs",
+        "props": ["ExpressJS", ".NET"]
+      }
+    ]
+  },
+  "awards": [
+    {
+      "date": "June 2022",
+      "event": "WOW award",
+      "award": "Winner",
+      "link": "https://github.com/anth0nywong/resume-generator",
+      "descriptions": [
+        "Participated in ...",
+        "Collaborated effectively with a team..."
+      ]
+    }
+  ],
+  "training": {
+    "title": "Training",
+    "content": [
+      "CertiProf - SCRUM Foundation Professional Certificate (SFPC)",
+      "PMI - Agile Kickoff Badge",
+      "PMI - Waterfall Kickoff Badge"
+    ]
+  }
+}

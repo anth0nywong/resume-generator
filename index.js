@@ -1,17 +1,25 @@
 const { app, BrowserWindow, Notification, ipcMain } = require("electron");
 const { generator, savedPath } = require("./generator");
 const path = require("path");
+const exec = require("child_process").exec;
 
 let win;
 let progressInterval;
 
-function showNotification() {
+function showNotification(data, filePath) {
   console.log("show Notification");
   endProgressBar();
-  new Notification({
+  const popOut = new Notification({
     title: "Generation Finished",
-    body: "Your file is saved at " + savedPath,
-  }).show();
+    body: "Your file is saved at " + filePath,
+  });
+  console.log(filePath);
+  popOut.on("click", () => {
+    console.log("Notification is clicked");
+    exec(' "' + filePath + '"');
+  });
+  exec(' "' + filePath + '"');
+  popOut.show();
 }
 
 // Create window when the app is turned on, and load html for display
@@ -30,6 +38,7 @@ const createWindow = () => {
 };
 
 const startProgressBar = () => {
+  clearInterval(progressInterval);
   const INCREMENT = 0.05;
   const INTERVAL_DELAY = 100; // ms
 
@@ -53,17 +62,29 @@ const endProgressBar = () => {
   win.setProgressBar(1);
 };
 
-const sleep = (ms) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-};
-
 app.whenReady().then(createWindow);
 
 ipcMain.on("toMain", async (event, args) => {
   startProgressBar();
-  await generator(args, showNotification);
+  let today = new Date().toJSON();
+  today = today.replaceAll(":", "-");
+  console.log(today);
+  let currentDateTime = today.slice(0, 10) + "-" + today.slice(11, 19);
+
+  console.log(currentDateTime); // "2022-06-17"
+  const path =
+    __dirname +
+    "/output/" +
+    args.title.name +
+    "_resume_" +
+    currentDateTime +
+    ".pdf";
+  await generator(args, path, (err) => {
+    if (err) {
+      console.log(err);
+    }
+    showNotification(args, path);
+  });
 });
 
 app.on("before-quit", () => {

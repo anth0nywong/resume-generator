@@ -2,23 +2,22 @@ const fs = require("fs");
 const compiletPDF = require("./latex_service");
 const latexFunc = require("./latex");
 
-function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
 module.exports = {
-  generator: async (data, callback) => {
+  generator: async (data, path, callback) => {
     let temp = fs.createWriteStream("temp.tex");
 
     console.log("Generating temporary latex doucment.");
     const latex = latexFunc(data);
-    await latex.forEach(async (text) => {
+    console.log(latex);
+    await latex(data).forEach(async (text) => {
       await temp.write(text);
     });
 
-    await compiletPDF("temp.tex", data.title.name + "_CV.pdf", () => {
+    await compiletPDF("temp.tex", path, (err) => {
+      if (err) {
+        console.log("Generator receive an error");
+        console.log(err);
+      }
       temp.close();
       callback();
     });

@@ -1,0 +1,151 @@
+{
+  "template": "template_3",
+  "title": {
+    "eachRowLinks": "3",
+    "name": "Your Name",
+    "links": [
+      {
+        "link": "https://github.com/",
+        "icon": "faGithub",
+        "text": "your github"
+      },
+      {
+        "link": "https://www.linkedin.com/",
+        "icon": "faLinkedin",
+        "text": "Your linkedin name"
+      },
+      {
+        "link": "mailto:anthonywong.hokhei@gmail.com",
+        "icon": "faEnvelope",
+        "text": "Your Email"
+      },
+      {
+        "link": "tel:+11234567890",
+        "icon": "faMobile",
+        "text": "(123)4567890"
+      }
+    ]
+  },
+  "summary": {
+    "title": "Summary of Qualification",
+    "job_title": "Junior Software Engineer",
+    "content": ["Point 1", "Point 2", "Point 3"]
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "content": [
+      {
+        "title": "Front-end",
+        "icon": "faPaintBrush",
+        "props": ["Next", "React", "Redux", "Bootstrap", "Tailwind CSS", "Sass"]
+      },
+      {
+        "title": "Back-end",
+        "icon": "faCogs",
+        "props": ["ExpressJS", ".NET", "RESTful"]
+      },
+      {
+        "title": "Database",
+        "icon": "faDatabase",
+        "props": ["OracleSQL", "MongoDB"]
+      },
+      {
+        "title": "Testing and Development Tools",
+        "icon": "faTools",
+        "props": ["Git", "Postman", "Selenium", "Mocha", "Jest"]
+      }
+    ]
+  },
+  "awards": {
+    "title": "Achievements",
+    "content": [
+      {
+        "date": "June 2022",
+        "event": "WOW award",
+        "award": "Winner",
+        "link": "https://github.com/anth0nywong/resume-generator",
+        "descriptions": [
+          "Participated in ...",
+          "Collaborated effectively with a team..."
+        ]
+      }
+    ]
+  },
+  "educations": {
+    "title": "Education",
+    "content": [
+      {
+        "from": "2000",
+        "to": "2004",
+        "gpa": "4.5",
+        "gpaMax": "4.5",
+        "college": "Any College",
+        "margin": "20pt",
+        "degree": "Degree in Computer Science"
+      },
+      {
+        "from": "2004",
+        "to": "2008",
+        "college": "Any University",
+        "degree": "Master in Computer Science"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Work Experience",
+    "content": [
+      {
+        "title": "Software Developer",
+        "company": "Wellcome",
+        "location": "Toronto, ON",
+        "from": "2008",
+        "to": "2014",
+        "generalDescription": "Description of Your Job",
+        "tech": "NodeJS/Electron",
+        "descriptions": [
+          "Develope an app which...",
+          "Collaborate with the team to..."
+        ]
+      }
+    ]
+  },
+  "otherExperience": {
+    "title": "Other Experience",
+    "content": [
+      {
+        "title": "Civil Engineer",
+        "company": "King Construction Limited",
+        "location": "Toronto, ON",
+        "from": "2014",
+        "to": "2021"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "content": [
+      {
+        "title": "Project 1- Wellcome",
+        "link": {
+          "link": "https://github.com/anth0nywong/resume-generator",
+          "name": "Link to Demo"
+        },
+        "tech": "NodeJS/Electron",
+        "descriptions": ["Project description 1", "Project description 2"]
+      },
+      {
+        "title": "Project 2- Hello World",
+        "link": {
+          "link": "https://github.com/anth0nywong/resume-generator",
+          "name": "Link to Demo"
+        },
+        "tech": "NodeJS/Python",
+        "descriptions": ["Project description 1", "Project description 2"]
+      }
+    ]
+  },
+  "training": {
+    "title": "Training",
+    "content": ["Certificate 1", "Certificate 2", "Certificate 3"]
+  }
+}
