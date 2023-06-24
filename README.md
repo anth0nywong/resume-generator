@@ -10,7 +10,7 @@ Install the application with msi or squirrel installer of release. Run it with t
 
 (if you installed with squirrel installer, the application will be installed at C:\Users\Your_User\AppData\Local\latex-resume-generator)
 
-Modify the [json template](https://github.com/anth0nywong/resume-generator/blob/main/data.json) with your information.
+Modify the [json template](https://github.com/anth0nywong/resume-generator/tree/main/data_template) with your information.
 
 Upload your JSON file in the application and submit it, the pdf will be generated at your app installation location.
 
@@ -18,9 +18,9 @@ Upload your JSON file in the application and submit it, the pdf will be generate
 
 [Interface](https://anth0nywong.github.io/resume-generator)
 
-[App](https://anth0nywong.github.io/resume-generator/Anthony_Wong_CV.pdf)
+[Sample Resume](https://anth0nywong.github.io/resume-generator/output/Anthony%20Wong_resume.pdf)
 
-In version 0.0.1, only one template is created, I will update more templates and template selection features in the future.
+Three templates are created, more templates will be available in the future.
 
 ## Tech
 
